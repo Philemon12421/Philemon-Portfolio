@@ -19,14 +19,27 @@ export const Projects = () => (
           <img 
             src={project.image} 
             alt={project.title} 
+            onError={(e) => {
+              const target = e.target as HTMLImageElement;
+              target.src = `https://picsum.photos/seed/${project.title}/800/600`;
+            }}
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
             referrerPolicy="no-referrer"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-brand/90 via-brand/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-10">
-            <span className="text-accent font-bold text-sm uppercase tracking-widest mb-2">{project.category}</span>
+            <div className="flex justify-between items-start mb-2">
+              <span className="text-accent font-bold text-sm uppercase tracking-widest">{project.category}</span>
+              {'inProgress' in project && project.inProgress && (
+                <span className="bg-white/20 backdrop-blur-md text-white text-[10px] font-black px-2 py-1 rounded-md uppercase tracking-tighter">
+                  In Progress
+                </span>
+              )}
+            </div>
             <h3 className="text-3xl font-bold text-white mb-6 leading-tight">{project.title}</h3>
             <a 
               href={project.link} 
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-2 text-white font-bold w-fit border-b-2 border-white pb-1 group/btn transition-all hover:text-accent hover:border-accent"
             >
               View Project

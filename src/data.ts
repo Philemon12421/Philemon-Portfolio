@@ -50,7 +50,7 @@ export const hero = {
     { name: "Contact Me", href: "#contact", primary: false },
     { name: "Download CV", href: "/cv.pdf", primary: false, icon: Download },
   ],
-  profileImage: "/profile.png",
+  profileImage: "src/components/done2.png",
 };
 
 export const about = {
@@ -160,28 +160,29 @@ export const certifications = [
 
 export const projects = [
   {
-    title: "Corporate Website Redesign",
+    title: "DTC QR Code",
     category: "Websites",
-    image: "https://picsum.photos/seed/project1/800/600",
-    link: "#",
+    image: "src/components/dtc -qrcode.gif",
+    link: "https://dtc-qrcode.vercel.app",
   },
   {
-    title: "Summer Campaign Visuals",
-    category: "Social media campaigns",
-    image: "https://picsum.photos/seed/project2/800/600",
-    link: "#",
+    title: "HiSend",
+    category: "File Sharing",
+    image: "src/components/hisend.gif",
+    link: "https://hisend.vercel.app",
   },
   {
-    title: "Tech Channel Branding",
-    category: "YouTube branding",
-    image: "https://picsum.photos/seed/project3/800/600",
-    link: "#",
+    title: "iSeek",
+    category: "Search & Discovery",
+    image: "src/components/iseek.gif",
+    link: "https://iseek.vercel.app",
+    inProgress: true,
   },
   {
-    title: "Product Launch Animation",
-    category: "Animated ads",
-    image: "https://picsum.photos/seed/project4/800/600",
-    link: "#",
+    title: "Totti Tools",
+    category: "Developer Utilities",
+    image: "src/components/totti tools.gif",
+    link: "https://tottti.vercel.app",
   },
 ];
 
