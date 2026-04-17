@@ -1,11 +1,70 @@
-<div align="center">
+# Philemon Osei Kusi - Personal Portfolio
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+A modern, fully responsive personal portfolio website for a **Software Engineer & Digital Creative**. Built with high-impact typography, smooth animations, and a clean "white aesthetic" design.
 
-  <h1>Built with AI Studio</h2>
+![Portfolio Preview](https://picsum.photos/seed/portfolio-preview/1200/600)
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+## 🚀 Features
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+- **Modern One-Page Layout**: A seamless scrolling experience with a visual progress bar.
+- **Dynamic Animations**: Powered by **Framer Motion**, including fade-ins on scroll, slide-up transitions, and micro-interactions.
+- **Responsive Design**: Fully optimized for mobile, tablet, and desktop viewports.
+- **Icon-Rich Skills Section**: Visually engaging skills grid using **Lucide React** icons.
+- **Professional Sections**:
+    - **Hero**: Impactful introduction with dynamic image presentation.
+    - **About**: Personal summary and qualities.
+    - **Experience & Education**: Timeline-based professional history.
+    - **Projects**: Portfolio showcase with hover overlays.
+    - **Contact**: Polished contact form and social media integration.
 
-</div>
+## 🛠️ Tech Stack
+
+- **Framework**: [React 19](https://react.dev/) with [Vite](https://vitejs.dev/)
+- **Styling**: [Tailwind CSS 4.0](https://tailwindcss.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+
+## 📦 Getting Started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (latest LTS recommended)
+- [npm](https://www.npmjs.com/)
+
+### Installation
+
+1. **Clone the repository** (if applicable) or download the source code.
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+3. **Start the development server**:
+   ```bash
+   npm run dev
+   ```
+
+## 🎨 Customization
+
+### Updating Profile Image
+To show your photo on the website:
+1. Save your image as `profile.png`.
+2. Place it in the `/public` folder.
+3. The site will automatically detect and apply the enhanced "active" ring effects to it.
+
+### Editing Content
+All content (navigation, skills, projects, experience) is centralized in:
+`src/data.ts`
+
+Simply edit the constants in this file to update your portfolio with your own information.
+
+## 📫 Contact
+
+- **Email**: philemonkusi292@gmail.com
+- **Phone**: +233592063645
+- **Location**: Kumasi, Ghana
+- **LinkedIn**: [linkedin.com/in/philemonkusi](https://linkedin.com)
+
+---
+
+Developed with ❤️ by **Philemon Osei Kusi**.
