@@ -2,7 +2,7 @@
 
 A modern, fully responsive personal portfolio website for a **Software Engineer & Digital Creative**. Built with high-impact typography, smooth animations, and a clean "white aesthetic" design.
 
-![Portfolio Preview](https://picsum.photos/seed/portfolio-preview/1200/600)
+![Portfolio Preview](/portfolio-preview/1200/600)
 
 ## 🚀 Features
 
