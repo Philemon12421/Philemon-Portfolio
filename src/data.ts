@@ -8,11 +8,6 @@ import {
   Twitter, 
   Youtube, 
   Instagram,
-  Mail,
-  Phone,
-  MapPin,
-  ExternalLink,
-  ChevronRight,
   Download,
   Terminal,
   Braces,
@@ -29,7 +24,8 @@ import {
   TrendingUp,
   Table,
   FileText,
-  Presentation
+  Presentation,
+  GitBranch
 } from 'lucide-react';
 
 export const navigation = [
@@ -43,18 +39,25 @@ export const navigation = [
 
 export const hero = {
   name: "Philemon Osei Kusi",
-  title: "Software Engineer | Digital Creator",
-  tagline: "Passionate about technology, digital media, and building impactful digital experiences.",
+  title: "Software Engineer",
+  subtitle: "& Digital Creator",
+  tagline: "Building impactful digital experiences through clean code, creative design, and purposeful technology.",
+  badge: "Open to new opportunities",
   cta: [
     { name: "View Projects", href: "#projects", primary: true },
     { name: "Contact Me", href: "#contact", primary: false },
     { name: "Download CV", href: "/cv.pdf", primary: false, icon: Download },
   ],
   profileImage: "src/components/done2.png",
+  stats: [
+    { value: "5+", label: "Years Experience" },
+    { value: "20+", label: "Projects Delivered" },
+    { value: "3+", label: "Industries Served" },
+  ],
 };
 
 export const about = {
-  content: "Aspiring Computer Science undergraduate at KNUST with strong skills in web development, digital media, and content creation. Experienced in building websites, designing digital content, and solving real-world problems using technology.",
+  content: "Aspiring Computer Science undergraduate at KNUST with strong skills in web development, digital media, and content creation. I build websites, design digital content, and solve real-world problems using technology — driven by curiosity and a commitment to craft.",
 };
 
 export const skillGroups = [
@@ -66,12 +69,13 @@ export const skillGroups = [
       { name: "JavaScript", icon: Braces },
       { name: "React", icon: Atom },
       { name: "Java", icon: Coffee },
-      { name: "HTML", icon: Layout },
-      { name: "CSS", icon: Layout },
+      { name: "HTML & CSS", icon: Layout },
       { name: "Linux", icon: Cpu },
       { name: "WordPress", icon: Globe },
+      { name: "Git & GitHub", icon: GitBranch },
     ],
-    color: "bg-blue-50 text-blue-600 border-blue-100",
+    color: "bg-blue-50 text-blue-700 border-blue-100",
+    iconBg: "bg-blue-100",
   },
   {
     title: "Design & Media",
@@ -80,10 +84,11 @@ export const skillGroups = [
       { name: "Adobe Photoshop", icon: ImageIcon },
       { name: "Illustrator", icon: PenTool },
       { name: "Canva", icon: Palette },
-      { name: "Adobe Premiere Pro", icon: Video },
+      { name: "Premiere Pro", icon: Video },
       { name: "CapCut", icon: Scissors },
     ],
-    color: "bg-purple-50 text-purple-600 border-purple-100",
+    color: "bg-violet-50 text-violet-700 border-violet-100",
+    iconBg: "bg-violet-100",
   },
   {
     title: "Digital Marketing",
@@ -93,47 +98,52 @@ export const skillGroups = [
       { name: "Social Media Ads", icon: TrendingUp },
       { name: "YouTube Optimization", icon: Youtube },
     ],
-    color: "bg-orange-50 text-orange-600 border-orange-100",
+    color: "bg-amber-50 text-amber-700 border-amber-100",
+    iconBg: "bg-amber-100",
   },
   {
-    title: "Tools",
+    title: "Tools & Productivity",
     icon: Wrench,
     items: [
       { name: "Microsoft Excel", icon: Table },
       { name: "Word", icon: FileText },
       { name: "PowerPoint", icon: Presentation },
     ],
-    color: "bg-green-50 text-green-600 border-green-100",
+    color: "bg-emerald-50 text-emerald-700 border-emerald-100",
+    iconBg: "bg-emerald-100",
   },
 ];
 
 export const experiences = [
   {
     role: "Freelance Digital Content Creator",
-    period: "2019 - Present",
+    period: "2019 – Present",
     company: "Self-employed",
     details: [
-      "Designed graphics, videos, and animated ads",
-      "Built and managed WordPress websites",
-      "Created YouTube thumbnails and branding assets",
+      "Designed graphics, videos, and animated ads for clients",
+      "Built and managed WordPress websites with custom themes",
+      "Created YouTube thumbnails and complete branding packages",
+      "Consulted on digital strategy for small businesses",
     ],
   },
   {
     role: "Digital Media Assistant",
-    period: "2021 - 2023",
+    period: "2021 – 2023",
     company: "Queens Enterprise",
     details: [
-      "Designed marketing visuals",
-      "Supported digital campaigns",
+      "Designed marketing visuals for print and digital channels",
+      "Supported and executed digital advertising campaigns",
+      "Managed social media content calendar and scheduling",
     ],
   },
   {
     role: "ICT & Creative Arts Teacher",
-    period: "2020 - 2021",
+    period: "2020 – 2021",
     company: "Education Sector",
     details: [
-      "Taught coding and design basics",
-      "Created interactive learning materials",
+      "Taught coding fundamentals and design basics to students",
+      "Developed interactive learning materials and lesson plans",
+      "Integrated technology into creative arts curriculum",
     ],
   },
 ];
@@ -145,7 +155,7 @@ export const education = [
     period: "In Progress",
   },
   {
-    degree: "WASSCE (General Science)",
+    degree: "WASSCE – General Science",
     institution: "Tepa Senior High School",
     period: "Completed",
   },
@@ -161,46 +171,55 @@ export const certifications = [
 export const projects = [
   {
     title: "DTC QR Code",
-    category: "Websites",
+    category: "Web App",
+    description: "A sleek QR code generator with custom styling and instant download.",
     image: "src/components/dtc -qrcode.gif",
     link: "https://dtc-qrcode.vercel.app",
+    tags: ["React", "Vercel"],
   },
   {
     title: "HiSend",
     category: "File Sharing",
+    description: "Peer-to-peer file sharing app with a clean, minimal interface.",
     image: "src/components/hisend.gif",
     link: "https://hisend.vercel.app",
+    tags: ["JavaScript", "WebRTC"],
   },
   {
     title: "iSeek",
     category: "Search & Discovery",
+    description: "A smart search and discovery tool built for speed and precision.",
     image: "src/components/iseek.gif",
     link: "https://iseek.vercel.app",
+    tags: ["React", "API"],
     inProgress: true,
   },
   {
     title: "Totti Tools",
     category: "Developer Utilities",
+    description: "A collection of handy developer tools in one clean dashboard.",
     image: "src/components/totti tools.gif",
     link: "https://tottti.vercel.app",
+    tags: ["React", "Utilities"],
   },
 ];
 
 export const languages = [
-  { name: "JavaScript", level: "Advanced" },
-  { name: "Python", level: "Intermediate" },
-  { name: "React", level: "Intermediate" },
-  { name: "Java", level: "Intermediate" },
-  { name: "HTML & CSS", level: "Advanced" },
-  { name: "Linux", level: "Intermediate" },
+  { name: "JavaScript", level: "Advanced", pct: 88 },
+  { name: "Python", level: "Intermediate", pct: 65 },
+  { name: "React", level: "Intermediate", pct: 70 },
+  { name: "Java", level: "Intermediate", pct: 60 },
+  { name: "HTML & CSS", level: "Advanced", pct: 92 },
+  { name: "Linux", level: "Intermediate", pct: 62 },
 ];
 
 export const qualities = [
-  "Creative",
-  "Detail-oriented",
-  "Fast learner",
-  "Strong communicator",
+  "Creative Thinker",
+  "Detail-Oriented",
+  "Fast Learner",
+  "Strong Communicator",
   "Adaptive",
+  "Problem Solver",
 ];
 
 export const contactDetails = {
