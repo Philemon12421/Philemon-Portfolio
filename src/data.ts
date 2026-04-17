@@ -28,13 +28,21 @@ import {
   GitBranch
 } from 'lucide-react';
 
+// ── Asset imports (Vite / CRA handle these correctly) ──────────────────────
+import profileImg from './done2.png';
+import dtcGif     from './dtc -qrcode.gif';
+import hisendGif  from './hisend.gif';
+import iseekGif   from './iseek.gif';
+import tottiGif   from './totti tools.gif';
+// ───────────────────────────────────────────────────────────────────────────
+
 export const navigation = [
-  { name: 'Home', href: '#' },
-  { name: 'About', href: '#about' },
-  { name: 'Skills', href: '#skills' },
+  { name: 'Home',       href: '#' },
+  { name: 'About',      href: '#about' },
+  { name: 'Skills',     href: '#skills' },
   { name: 'Experience', href: '#experience' },
-  { name: 'Projects', href: '#projects' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'Projects',   href: '#projects' },
+  { name: 'Contact',    href: '#contact' },
 ];
 
 export const hero = {
@@ -45,14 +53,19 @@ export const hero = {
   badge: "Open to new opportunities",
   cta: [
     { name: "View Projects", href: "#projects", primary: true },
-    { name: "Contact Me", href: "#contact", primary: false },
-    { name: "Download CV", href: "https://drive.google.com/file/d/1mNDSY_0ftTjxHHngWGTsqUc8IKFWZFy9/view?usp=drive_fs&userstoinvite=%22%22", primary: false, icon: Download },
+    { name: "Contact Me",    href: "#contact",  primary: false },
+    {
+      name: "Download CV",
+      href: "https://drive.google.com/uc?export=download&id=1mNDSY_0ftTjxHHngWGTsqUc8IKFWZFy9",
+      primary: false,
+      icon: Download,
+    },
   ],
-  profileImage: "src/components/done2.png",
+  profileImage: profileImg,
   stats: [
-    { value: "5+", label: "Years Experience" },
+    { value: "5+",  label: "Years Experience" },
     { value: "20+", label: "Projects Delivered" },
-    { value: "3+", label: "Industries Served" },
+    { value: "3+",  label: "Industries Served" },
   ],
 };
 
@@ -65,13 +78,13 @@ export const skillGroups = [
     title: "Programming & Development",
     icon: Code2,
     items: [
-      { name: "Python", icon: Terminal },
-      { name: "JavaScript", icon: Braces },
-      { name: "React", icon: Atom },
-      { name: "Java", icon: Coffee },
-      { name: "HTML & CSS", icon: Layout },
-      { name: "Linux", icon: Cpu },
-      { name: "WordPress", icon: Globe },
+      { name: "Python",       icon: Terminal },
+      { name: "JavaScript",   icon: Braces },
+      { name: "React",        icon: Atom },
+      { name: "Java",         icon: Coffee },
+      { name: "HTML & CSS",   icon: Layout },
+      { name: "Linux",        icon: Cpu },
+      { name: "WordPress",    icon: Globe },
       { name: "Git & GitHub", icon: GitBranch },
     ],
     color: "bg-blue-50 text-blue-700 border-blue-100",
@@ -82,10 +95,10 @@ export const skillGroups = [
     icon: Palette,
     items: [
       { name: "Adobe Photoshop", icon: ImageIcon },
-      { name: "Illustrator", icon: PenTool },
-      { name: "Canva", icon: Palette },
-      { name: "Premiere Pro", icon: Video },
-      { name: "CapCut", icon: Scissors },
+      { name: "Illustrator",     icon: PenTool },
+      { name: "Canva",           icon: Palette },
+      { name: "Premiere Pro",    icon: Video },
+      { name: "CapCut",          icon: Scissors },
     ],
     color: "bg-violet-50 text-violet-700 border-violet-100",
     iconBg: "bg-violet-100",
@@ -94,8 +107,8 @@ export const skillGroups = [
     title: "Digital Marketing",
     icon: Megaphone,
     items: [
-      { name: "SEO Basics", icon: Search },
-      { name: "Social Media Ads", icon: TrendingUp },
+      { name: "SEO Basics",           icon: Search },
+      { name: "Social Media Ads",     icon: TrendingUp },
       { name: "YouTube Optimization", icon: Youtube },
     ],
     color: "bg-amber-50 text-amber-700 border-amber-100",
@@ -106,8 +119,8 @@ export const skillGroups = [
     icon: Wrench,
     items: [
       { name: "Microsoft Excel", icon: Table },
-      { name: "Word", icon: FileText },
-      { name: "PowerPoint", icon: Presentation },
+      { name: "Word",            icon: FileText },
+      { name: "PowerPoint",      icon: Presentation },
     ],
     color: "bg-emerald-50 text-emerald-700 border-emerald-100",
     iconBg: "bg-emerald-100",
@@ -149,16 +162,8 @@ export const experiences = [
 ];
 
 export const education = [
-  {
-    degree: "BSc Computer Science",
-    institution: "KNUST",
-    period: "In Progress",
-  },
-  {
-    degree: "WASSCE – General Science",
-    institution: "Tepa Senior High School",
-    period: "Completed",
-  },
+  { degree: "BSc Computer Science",    institution: "KNUST",                  period: "In Progress" },
+  { degree: "WASSCE – General Science", institution: "Tepa Senior High School", period: "Completed"   },
 ];
 
 export const certifications = [
@@ -173,15 +178,15 @@ export const projects = [
     title: "DTC QR Code",
     category: "Web App",
     description: "A sleek QR code generator with custom styling and instant download.",
-    video: "src/components/dtc -qrcode.gif",
+    image: dtcGif,
     link: "https://dtc-qrcode.vercel.app",
     tags: ["React", "Vercel"],
   },
   {
     title: "HiSend",
     category: "File Sharing",
-    description: "This is a saas tool  with a clean, minimal interface.",
-    video: "src/components/hisend.gif",
+    description: "A SaaS file-sharing tool with a clean, minimal interface.",
+    image: hisendGif,
     link: "https://hisend.vercel.app",
     tags: ["JavaScript", "WebRTC"],
   },
@@ -189,7 +194,7 @@ export const projects = [
     title: "iSeek",
     category: "Search & Discovery",
     description: "A smart search and discovery tool built for speed and precision.",
-    video: "src/components/iseek.gif",
+    image: iseekGif,
     link: "https://iseek.vercel.app",
     tags: ["React", "API"],
     inProgress: true,
@@ -198,19 +203,19 @@ export const projects = [
     title: "Totti Tools",
     category: "Developer Utilities",
     description: "A collection of handy developer tools in one clean dashboard.",
-    video: "src/components/totti tools.gif",
+    image: tottiGif,
     link: "https://tottti.vercel.app",
     tags: ["React", "Utilities"],
   },
 ];
 
 export const languages = [
-  { name: "JavaScript", level: "Advanced", pct: 88 },
-  { name: "Python", level: "Intermediate", pct: 65 },
-  { name: "React", level: "Intermediate", pct: 70 },
-  { name: "Java", level: "Intermediate", pct: 60 },
-  { name: "HTML & CSS", level: "Advanced", pct: 92 },
-  { name: "Linux", level: "Intermediate", pct: 62 },
+  { name: "JavaScript", level: "Advanced",     pct: 88 },
+  { name: "Python",     level: "Intermediate", pct: 65 },
+  { name: "React",      level: "Intermediate", pct: 70 },
+  { name: "Java",       level: "Intermediate", pct: 60 },
+  { name: "HTML & CSS", level: "Advanced",     pct: 92 },
+  { name: "Linux",      level: "Intermediate", pct: 62 },
 ];
 
 export const qualities = [
@@ -227,10 +232,10 @@ export const contactDetails = {
   email: "philemonkusi292@gmail.com",
   location: "Kumasi, Ghana",
   socials: [
-    { name: "GitHub", href: "https://github.com", icon: Github },
-    { name: "LinkedIn", href: "https://linkedin.com", icon: Linkedin },
-    { name: "Twitter", href: "https://twitter.com", icon: Twitter },
-    { name: "YouTube", href: "https://youtube.com", icon: Youtube },
+    { name: "GitHub",    href: "https://github.com",    icon: Github },
+    { name: "LinkedIn",  href: "https://linkedin.com",  icon: Linkedin },
+    { name: "Twitter",   href: "https://twitter.com",   icon: Twitter },
+    { name: "YouTube",   href: "https://youtube.com",   icon: Youtube },
     { name: "Instagram", href: "https://instagram.com", icon: Instagram },
   ],
 };
