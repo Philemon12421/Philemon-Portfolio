@@ -232,10 +232,10 @@ export const contactDetails = {
   email: "philemonkusi292@gmail.com",
   location: "Kumasi, Ghana",
   socials: [
-    { name: "GitHub",    href: "https://github.com",    icon: Github },
-    { name: "LinkedIn",  href: "https://linkedin.com",  icon: Linkedin },
-    { name: "Twitter",   href: "https://twitter.com",   icon: Twitter },
-    { name: "YouTube",   href: "https://youtube.com",   icon: Youtube },
-    { name: "Instagram", href: "https://instagram.com", icon: Instagram },
+    { name: "GitHub",    href: "https://github.com/Philemon12421",    icon: Github },
+    { name: "LinkedIn",  href: "https://www.linkedin.com/in/philemon--softwareengineer?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",  icon: Linkedin },
+    { name: "Twitter",   href: "https://x.com/philemonku86576",   icon: Twitter },
+    { name: "YouTube",   href: "https://www.youtube.com/@philemon4u1",   icon: Youtube },
+    { name: "Instagram", href: "https://www.instagram.com/philemon4u1?igsh=OWV4MzdtdXRrb3Qy", icon: Instagram },
   ],
 };
