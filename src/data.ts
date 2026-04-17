@@ -180,7 +180,7 @@ export const projects = [
     description: "A sleek QR code generator with custom styling and instant download.",
     image: dtcGif,
     link: "https://dtc-qrcode.vercel.app",
-    tags: ["React", "Vercel"],
+    tags: ["HTML/CSS", "Vercel"],
   },
   {
     title: "HiSend",
@@ -188,7 +188,7 @@ export const projects = [
     description: "A SaaS file-sharing tool with a clean, minimal interface.",
     image: hisendGif,
     link: "https://hisend.vercel.app",
-    tags: ["JavaScript", "WebRTC"],
+    tags: ["JavaScript", "Gmail/React"],
   },
   {
     title: "iSeek",
