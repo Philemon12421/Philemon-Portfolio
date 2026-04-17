@@ -284,8 +284,8 @@ export const Contact = () => (
         <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
           <div className="grid grid-cols-2 gap-4">
             {[
-              { label: "Name",  type: "text",  placeholder: "John Doe" },
-              { label: "Email", type: "email", placeholder: "john@example.com" },
+              { label: "Name",  type: "text",  placeholder: "Philemon Ose" },
+              { label: "Email", type: "email", placeholder: "philemonkusi292@gmail.com" },
             ].map(({ label, type, placeholder }) => (
               <div key={label} className="space-y-1.5">
                 <label className="text-[11px] font-bold uppercase tracking-widest text-gray-400">{label}</label>
