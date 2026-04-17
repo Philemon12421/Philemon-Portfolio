@@ -74,7 +74,7 @@ export const Navbar = () => {
               </motion.a>
             ))}
             <motion.a
-              href="/cv.pdf"
+              href="https://drive.google.com/file/d/1mNDSY_0ftTjxHHngWGTsqUc8IKFWZFy9/view"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.5 }}
