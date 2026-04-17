@@ -46,7 +46,7 @@ export const navigation = [
 ];
 
 export const hero = {
-  name: "Philemon Osei Kusi",
+  name: "Philemon Osei ",
   title: "Software Engineer",
   subtitle: "& Digital Creator",
   tagline: "Building impactful digital experiences through clean code, creative design, and purposeful technology.",
