@@ -1,8 +1,7 @@
 # Philemon Osei Kusi - Personal Portfolio
 
 A modern, fully responsive personal portfolio website for a **Software Engineer & Digital Creative**. Built with high-impact typography, smooth animations, and a clean "white aesthetic" design.
-
-![Portfolio Preview](src/Screenshot 2026-04-17 19.44.26.png/portfolio-preview/1200/600)
+![Portfolio Preview](src/Screenshot%202026-04-17%2019.44.26.png)
 
 ## 🚀 Features
 
