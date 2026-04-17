@@ -29,11 +29,11 @@ import {
 } from 'lucide-react';
 
 // ── Asset imports (Vite / CRA handle these correctly) ──────────────────────
-import profileImg from './done2.png';
-import dtcGif     from './dtc -qrcode.gif';
-import hisendGif  from './hisend.gif';
-import iseekGif   from './iseek.gif';
-import tottiGif   from './totti tools.gif';
+import profileImg from './components/done2.png';
+import dtcGif     from './components/dtc -qrcode.gif';
+import hisendGif  from './components/hisend.gif';
+import iseekGif   from './components/iseek.gif';
+import tottiGif   from './components/totti tools.gif';
 // ───────────────────────────────────────────────────────────────────────────
 
 export const navigation = [
