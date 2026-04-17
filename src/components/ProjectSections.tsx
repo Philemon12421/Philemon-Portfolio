@@ -21,16 +21,11 @@ export const Projects = () => (
           transition={{ delay: i * 0.1 }}
           className="group relative overflow-hidden rounded-[2.5rem] bg-gray-100 aspect-[16/10] cursor-pointer"
         >
-          {/* Project Image */}
+          {/* GIF preview — plays automatically, loops forever */}
           <img
             src={project.image}
             alt={project.title}
-            onError={(e) => {
-              const t = e.target as HTMLImageElement;
-              t.src = `https://picsum.photos/seed/${project.title}/800/500`;
-            }}
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-            referrerPolicy="no-referrer"
           />
 
           {/* Hover Overlay */}
@@ -38,7 +33,10 @@ export const Projects = () => (
             {/* Tags */}
             <div className="flex gap-2 mb-3 flex-wrap">
               {project.tags.map(tag => (
-                <span key={tag} className="px-2.5 py-1 bg-white/15 backdrop-blur-sm rounded-lg text-white/80 text-[10px] font-bold uppercase tracking-wide">
+                <span
+                  key={tag}
+                  className="px-2.5 py-1 bg-white/15 backdrop-blur-sm rounded-lg text-white/80 text-[10px] font-bold uppercase tracking-wide"
+                >
                   {tag}
                 </span>
               ))}
@@ -49,9 +47,15 @@ export const Projects = () => (
               )}
             </div>
 
-            <span className="text-accent font-bold text-xs uppercase tracking-widest mb-1">{project.category}</span>
-            <h3 className="text-2xl font-black text-white mb-2 leading-tight">{project.title}</h3>
-            <p className="text-white/70 text-sm font-medium mb-5 leading-relaxed">{project.description}</p>
+            <span className="text-accent font-bold text-xs uppercase tracking-widest mb-1">
+              {project.category}
+            </span>
+            <h3 className="text-2xl font-black text-white mb-2 leading-tight">
+              {project.title}
+            </h3>
+            <p className="text-white/70 text-sm font-medium mb-5 leading-relaxed">
+              {project.description}
+            </p>
 
             <a
               href={project.link}
@@ -68,15 +72,17 @@ export const Projects = () => (
             </a>
           </div>
 
-          {/* Always-visible label (top-left) */}
-          <div className="absolute top-5 left-5 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm group-hover:opacity-0 transition-opacity duration-300">
+          {/* Always-visible title chip (fades on hover) */}
+          <div className="absolute top-5 left-5 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm group-hover:opacity-0 transition-opacity duration-300 pointer-events-none">
             <span className="text-xs font-bold text-brand">{project.title}</span>
           </div>
 
           {/* In-progress badge always visible */}
           {project.inProgress && (
-            <div className="absolute top-5 right-5 bg-accent px-3 py-1.5 rounded-full group-hover:opacity-0 transition-opacity">
-              <span className="text-[10px] font-black text-white uppercase tracking-wide">In Progress</span>
+            <div className="absolute top-5 right-5 bg-accent px-3 py-1.5 rounded-full group-hover:opacity-0 transition-opacity pointer-events-none">
+              <span className="text-[10px] font-black text-white uppercase tracking-wide">
+                In Progress
+              </span>
             </div>
           )}
         </motion.div>
@@ -124,8 +130,8 @@ export const Contact = () => {
 
           <div className="space-y-6">
             {[
-              { icon: Mail, label: "Email", value: contactDetails.email, href: `mailto:${contactDetails.email}` },
-              { icon: Phone, label: "Phone", value: contactDetails.phone, href: `tel:${contactDetails.phone}` },
+              { icon: Mail,   label: "Email",    value: contactDetails.email,    href: `mailto:${contactDetails.email}` },
+              { icon: Phone,  label: "Phone",    value: contactDetails.phone,    href: `tel:${contactDetails.phone}` },
               { icon: MapPin, label: "Location", value: contactDetails.location, href: null },
             ].map(({ icon: Icon, label, value, href }, i) => (
               <motion.div
@@ -140,7 +146,9 @@ export const Contact = () => {
                   <Icon className="text-accent" size={18} />
                 </div>
                 <div>
-                  <p className="text-white/40 font-bold uppercase text-[10px] tracking-widest mb-0.5">{label}</p>
+                  <p className="text-white/40 font-bold uppercase text-[10px] tracking-widest mb-0.5">
+                    {label}
+                  </p>
                   {href ? (
                     <a href={href} className="text-base font-bold text-white hover:text-accent transition-colors">
                       {value}
@@ -188,11 +196,13 @@ export const Contact = () => {
           <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
             <div className="grid grid-cols-2 gap-4">
               {[
-                { label: "Name", type: "text", placeholder: "John Doe" },
+                { label: "Name",  type: "text",  placeholder: "John Doe" },
                 { label: "Email", type: "email", placeholder: "john@example.com" },
               ].map(({ label, type, placeholder }) => (
                 <div key={label} className="space-y-1.5">
-                  <label className="text-[11px] font-bold uppercase tracking-widest text-gray-400">{label}</label>
+                  <label className="text-[11px] font-bold uppercase tracking-widest text-gray-400">
+                    {label}
+                  </label>
                   <input
                     type={type}
                     placeholder={placeholder}
