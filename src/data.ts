@@ -25,16 +25,19 @@ import {
   Table,
   FileText,
   Presentation,
-  GitBranch
+  GitBranch,
+  Smartphone,
+  Puzzle,
+  BookOpen,
+  Wifi,
+  Lightbulb,
 } from 'lucide-react';
 
-// ── Asset imports (Vite / CRA handle these correctly) ──────────────────────
 import profileImg from './components/done2.png';
 import dtcGif     from './components/dtc -qrcode.gif';
 import hisendGif  from './components/hisend.gif';
 import iseekGif   from './components/iseek.gif';
 import tottiGif   from './components/totti tools.gif';
-// ───────────────────────────────────────────────────────────────────────────
 
 export const navigation = [
   { name: 'Home',       href: '#' },
@@ -46,7 +49,7 @@ export const navigation = [
 ];
 
 export const hero = {
-  name: "Philemon Osei ",
+  name: "Philemon Osei",
   title: "Software Engineer",
   subtitle: "& Digital Creator",
   tagline: "Building impactful digital experiences through clean code, creative design, and purposeful technology.",
@@ -70,7 +73,8 @@ export const hero = {
 };
 
 export const about = {
-  content: "Aspiring Computer Science undergraduate at KNUST with strong skills in web development, digital media, and content creation. I build websites, design digital content, and solve real-world problems using technology — driven by curiosity and a commitment to craft.",
+  content:
+    "Computer Science undergraduate at KNUST with 5+ years of hands-on experience building web apps, mobile apps, and digital products. I've shipped SaaS tools, browser extensions, and React Native apps — driven by curiosity, a love of clean code, and the belief that great technology solves real problems.",
 };
 
 export const skillGroups = [
@@ -78,14 +82,14 @@ export const skillGroups = [
     title: "Programming & Development",
     icon: Code2,
     items: [
-      { name: "Python",       icon: Terminal },
-      { name: "JavaScript",   icon: Braces },
-      { name: "React",        icon: Atom },
-      { name: "Java",         icon: Coffee },
-      { name: "HTML & CSS",   icon: Layout },
-      { name: "Linux",        icon: Cpu },
-      { name: "WordPress",    icon: Globe },
-      { name: "Git & GitHub", icon: GitBranch },
+      { name: "JavaScript / TypeScript", icon: Braces },
+      { name: "Python",                  icon: Terminal },
+      { name: "React & React Native",    icon: Atom },
+      { name: "Java",                    icon: Coffee },
+      { name: "HTML & CSS",              icon: Layout },
+      { name: "Linux",                   icon: Cpu },
+      { name: "WordPress",               icon: Globe },
+      { name: "Git & GitHub",            icon: GitBranch },
     ],
     color: "bg-blue-50 text-blue-700 border-blue-100",
     iconBg: "bg-blue-100",
@@ -118,9 +122,11 @@ export const skillGroups = [
     title: "Tools & Productivity",
     icon: Wrench,
     items: [
-      { name: "Microsoft Excel", icon: Table },
-      { name: "Word",            icon: FileText },
-      { name: "PowerPoint",      icon: Presentation },
+      { name: "Microsoft Excel",    icon: Table },
+      { name: "Word",               icon: FileText },
+      { name: "PowerPoint",         icon: Presentation },
+      { name: "Chrome Extensions",  icon: Puzzle },
+      { name: "Expo / React Native",icon: Smartphone },
     ],
     color: "bg-emerald-50 text-emerald-700 border-emerald-100",
     iconBg: "bg-emerald-100",
@@ -129,14 +135,14 @@ export const skillGroups = [
 
 export const experiences = [
   {
-    role: "Freelance Digital Content Creator",
+    role: "Freelance Software Engineer & Digital Creator",
     period: "2019 – Present",
     company: "Self-employed",
     details: [
-      "Designed graphics, videos, and animated ads for clients",
-      "Built and managed WordPress websites with custom themes",
-      "Created YouTube thumbnails and complete branding packages",
-      "Consulted on digital strategy for small businesses",
+      "Built and shipped 10+ web and mobile projects including SaaS tools, browser extensions, and mobile apps",
+      "Designed and managed WordPress websites with custom themes for small business clients",
+      "Created branding packages, YouTube thumbnails, graphics, and animated ad content",
+      "Consulted on digital strategy and SEO for businesses across multiple industries",
     ],
   },
   {
@@ -145,7 +151,7 @@ export const experiences = [
     company: "Queens Enterprise",
     details: [
       "Designed marketing visuals for print and digital channels",
-      "Supported and executed digital advertising campaigns",
+      "Planned and executed digital advertising campaigns across social platforms",
       "Managed social media content calendar and scheduling",
     ],
   },
@@ -154,15 +160,14 @@ export const experiences = [
     period: "2020 – 2021",
     company: "Education Sector",
     details: [
-      "Taught coding fundamentals and design basics to students",
-      "Developed interactive learning materials and lesson plans",
-      "Integrated technology into creative arts curriculum",
+      "Taught coding fundamentals and design basics to secondary school students",
+      "Developed interactive lesson plans integrating technology into creative arts curriculum",
     ],
   },
 ];
 
 export const education = [
-  { degree: "BSc Computer Science",    institution: "KNUST",                  period: "In Progress" },
+  { degree: "BSc Computer Science",     institution: "KNUST",                  period: "In Progress" },
   { degree: "WASSCE – General Science", institution: "Tepa Senior High School", period: "Completed"   },
 ];
 
@@ -174,10 +179,11 @@ export const certifications = [
 ];
 
 export const projects = [
+  // ── Featured (have GIFs / live links) ───────────────────────────────────
   {
     title: "DTC QR Code",
     category: "Web App",
-    description: "A sleek QR code generator with custom styling and instant download.",
+    description: "A sleek QR code generator with custom styling and instant one-click download.",
     image: dtcGif,
     link: "https://dtc-qrcode.vercel.app",
     tags: ["HTML/CSS", "Vercel"],
@@ -185,10 +191,10 @@ export const projects = [
   {
     title: "HiSend",
     category: "File Sharing",
-    description: "A SaaS file-sharing tool with a clean, minimal interface.",
+    description: "A SaaS file-sharing tool with a clean, minimal interface for fast transfers.",
     image: hisendGif,
     link: "https://hisend.vercel.app",
-    tags: ["JavaScript", "Gmail/React"],
+    tags: ["JavaScript", "React", "Vercel"],
   },
   {
     title: "iSeek",
@@ -202,20 +208,75 @@ export const projects = [
   {
     title: "Totti Tools",
     category: "Developer Utilities",
-    description: "A collection of handy developer tools in one clean dashboard.",
+    description: "A collection of handy developer tools bundled in one clean dashboard.",
     image: tottiGif,
     link: "https://tottti.vercel.app",
     tags: ["React", "Utilities"],
   },
+  // ── Additional projects ──────────────────────────────────────────────────
+  {
+    title: "The Bible App",
+    category: "Mobile App",
+    description: "A full-featured Bible study app with reading plans, verse search, and bookmarks — built with React Native & Expo.",
+    image: null,
+    link: "https://github.com/Philemon12421/The-bible-App",
+    tags: ["React Native", "TypeScript", "Expo"],
+    icon: BookOpen,
+  },
+  {
+    title: "Gitty Chrome Extension",
+    category: "Browser Extension",
+    description: "AI-powered Chrome extension that auto-generates README files and explains code snippets right in the browser.",
+    image: null,
+    link: "https://github.com/Philemon12421/Gitty-Chrome-Extension",
+    tags: ["JavaScript", "Chrome API", "AI"],
+    icon: Puzzle,
+  },
+  {
+    title: "Libre Update",
+    category: "Mobile App",
+    description: "An offline-first mobile library management system — organise and track your personal book collection on your phone.",
+    image: null,
+    link: "https://github.com/Philemon12421/Libre-Update",
+    tags: ["React Native", "TypeScript", "Expo"],
+    icon: BookOpen,
+  },
+  {
+    title: "Mimic",
+    category: "Open Source",
+    description: "An idea generation tool for the open-source community — helping developers find and contribute to meaningful projects.",
+    image: null,
+    link: "https://github.com/Philemon12421/mimic",
+    tags: ["TypeScript", "Open Source"],
+    icon: Lightbulb,
+  },
+  {
+    title: "DTC Official",
+    category: "Company Website",
+    description: "Official company website for DTC — a production-grade TypeScript & React site with full branding.",
+    image: null,
+    link: "https://github.com/Philemon12421/DTC-official",
+    tags: ["TypeScript", "React"],
+    icon: Globe,
+  },
+  {
+    title: "WiFi Auditor",
+    category: "Security Tool",
+    description: "A Python security auditing tool using aircrack-ng for practicing wireless network analysis across TCP and related protocols.",
+    image: null,
+    link: "https://github.com/Philemon12421/-wifi-auditor",
+    tags: ["Python", "Networking", "Security"],
+    icon: Wifi,
+  },
 ];
 
 export const languages = [
-  { name: "JavaScript", level: "Advanced",     pct: 88 },
-  { name: "Python",     level: "Intermediate", pct: 65 },
-  { name: "React",      level: "Intermediate", pct: 70 },
-  { name: "Java",       level: "Intermediate", pct: 60 },
-  { name: "HTML & CSS", level: "Advanced",     pct: 92 },
-  { name: "Linux",      level: "Intermediate", pct: 62 },
+  { name: "JavaScript / TypeScript", level: "Advanced",     pct: 88 },
+  { name: "HTML & CSS",              level: "Advanced",     pct: 92 },
+  { name: "React / React Native",    level: "Intermediate", pct: 75 },
+  { name: "Python",                  level: "Intermediate", pct: 65 },
+  { name: "Java",                    level: "Intermediate", pct: 60 },
+  { name: "Linux",                   level: "Intermediate", pct: 62 },
 ];
 
 export const qualities = [
@@ -232,10 +293,10 @@ export const contactDetails = {
   email: "philemonkusi292@gmail.com",
   location: "Kumasi, Ghana",
   socials: [
-    { name: "GitHub",    href: "https://github.com/Philemon12421",    icon: Github },
-    { name: "LinkedIn",  href: "https://www.linkedin.com/in/philemon--softwareengineer?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",  icon: Linkedin },
-    { name: "Twitter",   href: "https://x.com/philemonku86576",   icon: Twitter },
-    { name: "YouTube",   href: "https://www.youtube.com/@philemon4u1",   icon: Youtube },
-    { name: "Instagram", href: "https://www.instagram.com/philemon4u1?igsh=OWV4MzdtdXRrb3Qy", icon: Instagram },
+    { name: "GitHub",    href: "https://github.com/Philemon12421",         icon: Github },
+    { name: "LinkedIn",  href: "https://www.linkedin.com/in/philemon--softwareengineer", icon: Linkedin },
+    { name: "Twitter",   href: "https://x.com/philemonku86576",            icon: Twitter },
+    { name: "YouTube",   href: "https://www.youtube.com/@philemon4u1",     icon: Youtube },
+    { name: "Instagram", href: "https://www.instagram.com/philemon4u1",    icon: Instagram },
   ],
 };
