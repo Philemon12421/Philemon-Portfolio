@@ -3,14 +3,88 @@ import { Section } from './Section';
 import { hero } from '../data';
 import { ChevronRight, ArrowDown } from 'lucide-react';
 
+// ── Floating tech icons data ─────────────────────────────────────────────────
+const techIcons = [
+  { name: 'React',      src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',          x: '8%',  y: '18%', size: 44, duration: 6,   delay: 0    },
+  { name: 'TypeScript', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg', x: '88%', y: '12%', size: 38, duration: 7,   delay: 0.5  },
+  { name: 'JavaScript', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg', x: '82%', y: '72%', size: 40, duration: 5.5, delay: 1    },
+  { name: 'Python',     src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',         x: '5%',  y: '65%', size: 42, duration: 8,   delay: 1.5  },
+  { name: 'Linux',      src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg',           x: '15%', y: '82%', size: 36, duration: 6.5, delay: 0.8  },
+  { name: 'Java',       src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',             x: '92%', y: '45%', size: 40, duration: 7.5, delay: 2    },
+  { name: 'Git',        src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',               x: '3%',  y: '40%', size: 34, duration: 5,   delay: 1.2  },
+  { name: 'HTML5',      src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',           x: '78%', y: '28%', size: 36, duration: 6,   delay: 0.3  },
+  { name: 'CSS3',       src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg',             x: '20%', y: '10%', size: 34, duration: 7,   delay: 1.8  },
+  { name: 'Node.js',    src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',         x: '70%', y: '85%', size: 38, duration: 6.8, delay: 2.3  },
+  { name: 'Figma',      src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg',           x: '40%', y: '5%',  size: 32, duration: 5.5, delay: 0.6  },
+  { name: 'VS Code',    src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg',         x: '55%', y: '92%', size: 36, duration: 7,   delay: 1.4  },
+];
+
+// ── Floating icon component ──────────────────────────────────────────────────
+const FloatingIcon = ({
+  src, name, x, y, size, duration, delay,
+}: {
+  src: string; name: string; x: string; y: string;
+  size: number; duration: number; delay: number;
+}) => (
+  <motion.div
+    className="absolute pointer-events-none select-none"
+    style={{ left: x, top: y }}
+    initial={{ opacity: 0, scale: 0.4 }}
+    animate={{ opacity: 1, scale: 1 }}
+    transition={{ delay: delay + 1.2, duration: 0.6, ease: 'easeOut' }}
+  >
+    <motion.div
+      animate={{ y: [0, -14, 0] }}
+      transition={{
+        duration,
+        repeat: Infinity,
+        ease: 'easeInOut',
+        delay,
+      }}
+    >
+      <motion.div
+        whileHover={{ scale: 1.35, rotate: 8 }}
+        transition={{ type: 'spring', stiffness: 300, damping: 15 }}
+        className="relative group cursor-pointer pointer-events-auto"
+      >
+        {/* Glow ring */}
+        <div
+          className="absolute inset-0 rounded-2xl bg-white/20 blur-sm scale-110 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          style={{ width: size + 8, height: size + 8, top: -4, left: -4 }}
+        />
+        {/* Glass card */}
+        <div
+          className="flex items-center justify-center rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 shadow-lg shadow-black/10 group-hover:bg-white/20 group-hover:border-white/40 transition-all duration-300"
+          style={{ width: size + 16, height: size + 16, padding: 8 }}
+        >
+          <img src={src} alt={name} width={size} height={size} className="drop-shadow-sm" />
+        </div>
+        {/* Tooltip */}
+        <div className="absolute -bottom-7 left-1/2 -translate-x-1/2 px-2 py-0.5 bg-white/90 backdrop-blur-sm rounded-full text-[9px] font-black text-gray-700 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 shadow-sm border border-white/50">
+          {name}
+        </div>
+      </motion.div>
+    </motion.div>
+  </motion.div>
+);
+
+// ── Hero ─────────────────────────────────────────────────────────────────────
 export const Hero = () => {
   const scrollToProjects = () => {
     document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
-    <Section className="min-h-screen flex items-center pt-28 pb-16">
-      <div className="grid lg:grid-cols-2 gap-16 items-center w-full">
+    <Section className="min-h-screen flex items-center pt-28 pb-16 relative">
+
+      {/* ── Floating tech icons (behind everything) ── */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+        {techIcons.map((icon) => (
+          <FloatingIcon key={icon.name} {...icon} />
+        ))}
+      </div>
+
+      <div className="grid lg:grid-cols-2 gap-16 items-center w-full relative z-10">
 
         {/* Left: Text Content */}
         <motion.div
@@ -79,7 +153,7 @@ export const Hero = () => {
             transition={{ delay: 0.75 }}
             className="flex flex-wrap gap-4 mb-14"
           >
-            {hero.cta.map((button, i) => (
+            {hero.cta.map((button) => (
               <a
                 key={button.name}
                 href={button.href}
@@ -147,7 +221,6 @@ export const Hero = () => {
               className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.03]"
               referrerPolicy="no-referrer"
             />
-            {/* Subtle overlay on hover */}
             <div className="absolute inset-0 bg-gradient-to-t from-brand/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
             {/* Floating name badge */}
