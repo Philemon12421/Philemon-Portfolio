@@ -2,7 +2,7 @@
  * @license
  * SPDX-License-Identifier: Apache-2.0
  */
-
+import ReadmeSection from './components/ReadmeSection';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { About, Skills, Experience } from './components/ContentSections';
@@ -14,6 +14,7 @@ export default function App() {
       <Navbar />
       <main className="flex-grow">
         <Hero />
+        <ReadmeSection />  
         <About />
         <Skills />
         <Experience />
