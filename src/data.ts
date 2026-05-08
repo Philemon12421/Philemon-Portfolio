@@ -28,9 +28,6 @@ import {
   GitBranch,
   Smartphone,
   Puzzle,
-  BookOpen,
-  Wifi,
-  Lightbulb,
 } from 'lucide-react';
 
 import profileImg from './components/done2.png';
@@ -178,8 +175,8 @@ export const certifications = [
   "AI Career Essentials Certificate",
 ];
 
+// ── Only the 4 shipped projects with live GIFs ───────────────────────────────
 export const projects = [
-  // ── Featured (have GIFs / live links) ───────────────────────────────────
   {
     title: "DTC QR Code",
     category: "Web App",
@@ -213,61 +210,6 @@ export const projects = [
     link: "https://tottti.vercel.app",
     tags: ["React", "Utilities"],
   },
-  // ── Additional projects ──────────────────────────────────────────────────
-  {
-    title: "The Bible App",
-    category: "Mobile App",
-    description: "A full-featured Bible study app with reading plans, verse search, and bookmarks — built with React Native & Expo.",
-    image: null,
-    link: "https://github.com/Philemon12421/The-bible-App",
-    tags: ["React Native", "TypeScript", "Expo"],
-    icon: BookOpen,
-  },
-  {
-    title: "Gitty Chrome Extension",
-    category: "Browser Extension",
-    description: "AI-powered Chrome extension that auto-generates README files and explains code snippets right in the browser.",
-    image: null,
-    link: "https://github.com/Philemon12421/Gitty-Chrome-Extension",
-    tags: ["JavaScript", "Chrome API", "AI"],
-    icon: Puzzle,
-  },
-  {
-    title: "Libre Update",
-    category: "Mobile App",
-    description: "An offline-first mobile library management system — organise and track your personal book collection on your phone.",
-    image: null,
-    link: "https://github.com/Philemon12421/Libre-Update",
-    tags: ["React Native", "TypeScript", "Expo"],
-    icon: BookOpen,
-  },
-  {
-    title: "Mimic",
-    category: "Open Source",
-    description: "An idea generation tool for the open-source community — helping developers find and contribute to meaningful projects.",
-    image: null,
-    link: "https://github.com/Philemon12421/mimic",
-    tags: ["TypeScript", "Open Source"],
-    icon: Lightbulb,
-  },
-  {
-    title: "DTC Official",
-    category: "Company Website",
-    description: "Official company website for DTC — a production-grade TypeScript & React site with full branding.",
-    image: null,
-    link: "https://github.com/Philemon12421/DTC-official",
-    tags: ["TypeScript", "React"],
-    icon: Globe,
-  },
-  {
-    title: "WiFi Auditor",
-    category: "Security Tool",
-    description: "A Python security auditing tool using aircrack-ng for practicing wireless network analysis across TCP and related protocols.",
-    image: null,
-    link: "https://github.com/Philemon12421/-wifi-auditor",
-    tags: ["Python", "Networking", "Security"],
-    icon: Wifi,
-  },
 ];
 
 export const languages = [
@@ -293,10 +235,10 @@ export const contactDetails = {
   email: "philemonkusi292@gmail.com",
   location: "Kumasi, Ghana",
   socials: [
-    { name: "GitHub",    href: "https://github.com/Philemon12421",         icon: Github },
-    { name: "LinkedIn",  href: "https://www.linkedin.com/in/philemon--softwareengineer", icon: Linkedin },
-    { name: "Twitter",   href: "https://x.com/philemonku86576",            icon: Twitter },
-    { name: "YouTube",   href: "https://www.youtube.com/@philemon4u1",     icon: Youtube },
-    { name: "Instagram", href: "https://www.instagram.com/philemon4u1",    icon: Instagram },
+    { name: "GitHub",    href: "https://github.com/Philemon12421",                         icon: Github    },
+    { name: "LinkedIn",  href: "https://www.linkedin.com/in/philemon--softwareengineer",   icon: Linkedin  },
+    { name: "Twitter",   href: "https://x.com/philemonku86576",                            icon: Twitter   },
+    { name: "YouTube",   href: "https://www.youtube.com/@philemon4u1",                     icon: Youtube   },
+    { name: "Instagram", href: "https://www.instagram.com/philemon4u1",                    icon: Instagram },
   ],
 };
