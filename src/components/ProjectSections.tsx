@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion } from 'motion/react';
 import { Section, SectionTitle } from './Section';
 import { projects, contactDetails } from '../data';
 import { Mail, Phone, MapPin, Send, ArrowUpRight, ExternalLink } from 'lucide-react';
@@ -10,7 +10,7 @@ import { Mail, Phone, MapPin, Send, ArrowUpRight, ExternalLink } from 'lucide-re
 export const Projects = () => {
   const [hovered, setHovered] = useState<number | null>(null);
 
-  // First project = featured (wide), rest = grid
+  // 4 projects: first = featured wide, remaining 3 = grid
   const [featured, ...rest] = projects;
 
   return (
@@ -24,7 +24,7 @@ export const Projects = () => {
 
       <div className="space-y-4 mt-2">
 
-        {/* ── FEATURED CARD (wide) ── */}
+        {/* ── FEATURED CARD ── */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -35,26 +35,22 @@ export const Projects = () => {
           className="group relative rounded-[2rem] overflow-hidden bg-brand cursor-pointer"
           style={{ minHeight: 420 }}
         >
-          {/* GIF fills the card */}
           <img
             src={featured.image}
             alt={featured.title}
-            className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-55 transition-opacity duration-700 group-hover:scale-105 scale-100 transition-transform"
+            className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-55 transition-all duration-700 group-hover:scale-105 scale-100"
           />
-
-          {/* Gradient overlay always visible */}
           <div className="absolute inset-0 bg-gradient-to-r from-brand/95 via-brand/70 to-transparent" />
 
-          {/* Content */}
           <div className="relative z-10 flex flex-col justify-between h-full p-10 md:p-14" style={{ minHeight: 420 }}>
             <div className="flex items-start justify-between">
-              {/* Number label */}
               <span className="text-[80px] font-black leading-none text-white/10 select-none">01</span>
-
-              {/* Tags top-right */}
               <div className="flex gap-2 flex-wrap justify-end">
                 {featured.tags.map(tag => (
-                  <span key={tag} className="px-3 py-1 bg-white/10 backdrop-blur-sm border border-white/15 rounded-full text-[10px] font-bold text-white/70 uppercase tracking-wider">
+                  <span
+                    key={tag}
+                    className="px-3 py-1 bg-white/10 backdrop-blur-sm border border-white/15 rounded-full text-[10px] font-bold text-white/70 uppercase tracking-wider"
+                  >
                     {tag}
                   </span>
                 ))}
@@ -84,7 +80,7 @@ export const Projects = () => {
           </div>
         </motion.div>
 
-        {/* ── GRID: remaining 3 cards ── */}
+        {/* ── GRID: 3 remaining cards ── */}
         <div className="grid md:grid-cols-3 gap-4">
           {rest.map((project, i) => (
             <motion.div
@@ -98,19 +94,14 @@ export const Projects = () => {
               className="group relative rounded-[2rem] overflow-hidden bg-brand cursor-pointer flex flex-col"
               style={{ minHeight: 320 }}
             >
-              {/* GIF */}
               <img
                 src={project.image}
                 alt={project.title}
                 className="absolute inset-0 w-full h-full object-cover opacity-35 group-hover:opacity-55 transition-all duration-700 group-hover:scale-105 scale-100"
               />
-
-              {/* Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-brand via-brand/80 to-brand/30" />
 
-              {/* Content */}
               <div className="relative z-10 flex flex-col justify-between h-full p-7" style={{ minHeight: 320 }}>
-                {/* Top row */}
                 <div className="flex items-start justify-between">
                   <span className="text-[52px] font-black leading-none text-white/10 select-none">
                     0{i + 2}
@@ -123,7 +114,10 @@ export const Projects = () => {
                     )}
                     <div className="flex gap-1.5 flex-wrap justify-end">
                       {project.tags.map(tag => (
-                        <span key={tag} className="px-2.5 py-1 bg-white/10 border border-white/10 rounded-full text-[9px] font-bold text-white/60 uppercase tracking-wide">
+                        <span
+                          key={tag}
+                          className="px-2.5 py-1 bg-white/10 border border-white/10 rounded-full text-[9px] font-bold text-white/60 uppercase tracking-wide"
+                        >
                           {tag}
                         </span>
                       ))}
@@ -131,7 +125,6 @@ export const Projects = () => {
                   </div>
                 </div>
 
-                {/* Bottom */}
                 <div>
                   <span className="text-accent text-[10px] font-bold uppercase tracking-[0.2em] mb-2 block">
                     {project.category}
@@ -143,7 +136,7 @@ export const Projects = () => {
                     {project.description}
                   </p>
 
-                  {/* Link — slides up on hover */}
+                  {/* Hover link */}
                   <motion.div
                     initial={{ opacity: 0, y: 8 }}
                     animate={{ opacity: hovered === i ? 1 : 0, y: hovered === i ? 0 : 8 }}
@@ -160,7 +153,7 @@ export const Projects = () => {
                     </a>
                   </motion.div>
 
-                  {/* Static link icon when not hovered */}
+                  {/* Idle icon */}
                   <motion.div
                     animate={{ opacity: hovered === i ? 0 : 1 }}
                     transition={{ duration: 0.15 }}
@@ -284,8 +277,8 @@ export const Contact = () => (
         <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
           <div className="grid grid-cols-2 gap-4">
             {[
-              { label: "Name",  type: "text",  placeholder: "Philemon Ose" },
-              { label: "Email", type: "email", placeholder: "philemonkusi292@gmail.com" },
+              { label: "Name",  type: "text",  placeholder: "Your name" },
+              { label: "Email", type: "email", placeholder: "your@email.com" },
             ].map(({ label, type, placeholder }) => (
               <div key={label} className="space-y-1.5">
                 <label className="text-[11px] font-bold uppercase tracking-widest text-gray-400">{label}</label>
