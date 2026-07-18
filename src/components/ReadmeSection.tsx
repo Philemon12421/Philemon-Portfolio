@@ -101,7 +101,7 @@ export default function ReadmeSection() {
               <p className="text-zinc-600 text-sm mb-2"># greeting</p>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white leading-tight">
                 Hi, I'm{' '}
-                <span className="text-emerald-400">Philemon</span>{' '}
+                <span className="text-emerald-400">Philemon Osei</span>{' '}
                 <span className="text-amber-300">Kusi</span>
                 <span className="ml-2"><Cursor /></span>
               </h2>
